@@ -1,3 +1,7 @@
+:root {
+  --rem: 16px;
+}
+
 .header {
   display: flex;
   align-items: center;
@@ -6,7 +10,19 @@
 }
 
 .nav {
+  display: flex;
+  align-items: center;
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.link {
 }
 
 .title {
+  font-size: 2rem;
 }
