@@ -1,0 +1,17 @@
+<%- include('shared/head.ejs') %>
+</head>
+<body>
+  <%- include('shared/navigation.ejs') %>
+  <main>
+    <h1 class="title">Users Page</h1>
+    <ul class="users">
+      <% if (users.length > 0) { %>
+        <% for ( const user of users) { %>
+          <li><%= user.name %><li/>
+        <% } %>
+      <% } else { %>
+        <h2>There no users yet</h2>
+      <% } %>
+    </ul>
+  </main>
+<%- include('shared/end.ejs') %>

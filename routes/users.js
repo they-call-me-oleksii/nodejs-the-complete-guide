@@ -1,11 +1,19 @@
 const express = require("express");
-const path = require("path");
-const rootPath = require("../utils/rootPath");
+const users = require("../users");
 
 const Router = express.Router();
 
 Router.get("/users", (_req, res, _next) => {
-  res.sendFile(path.join(rootPath, "views", "users.html"));
+  res.render("users", {
+    pageTitle: "Users",
+    users,
+  });
+});
+
+Router.post("/create-user", (req, res, _next) => {
+  const newUserName = req.body.username;
+  users.push({ name: newUserName });
+  res.status(301).redirect("./users");
 });
 
 module.exports = Router;
