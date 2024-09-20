@@ -9,6 +9,7 @@ app.set("views", "views");
 
 // Middleware to parse URL-encoded bodies
 app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 app.use(express.static(path.join(__dirname, "public")));
 
 app.use(usersRouter);

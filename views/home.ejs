@@ -1,12 +1,14 @@
 <%- include('shared/head.ejs') %>
+<script src="/js/home-init.js" defer></script>
+
 </head>
 <body>
   <%- include('shared/navigation.ejs') %>
   <main>
     <h1 class="title">Home Page</h1>
-    <form action="/create-user" method="post">
+    <form class='add-user-form'>
     <label for="username">Name</label>
-    <input id="username" name=username type="text" />
+    <input id="username" name=username type="text" required />
     <button type="sumbit">Add user</button>
     </form>
   </main>

@@ -12,8 +12,12 @@ Router.get("/users", (_req, res, _next) => {
 
 Router.post("/create-user", (req, res, _next) => {
   const newUserName = req.body.username;
-  users.push({ name: newUserName });
-  res.status(301).redirect("./users");
+
+  if (newUserName) {
+    users.push({ name: newUserName });
+  }
+
+  res.status(200).end();
 });
 
 module.exports = Router;
