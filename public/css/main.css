@@ -17,6 +17,11 @@ body {
   min-height: 100vh;
 }
 
+*:focus,
+*:focus-visible {
+  outline: thick double red;
+}
+
 .header {
   display: flex;
   align-items: center;
@@ -39,6 +44,11 @@ body {
   padding-bottom: calc(var(--logo-width) / var(--logo-height-scale-value));
 }
 
+.logo:focus,
+.logo:focus-visible {
+  outline: thick double red;
+}
+
 .links {
   display: flex;
   align-items: center;
@@ -49,6 +59,11 @@ body {
   display: block;
   padding: 0.25rem;
   border: 0.1rem black solid;
+}
+
+.link:focus,
+.link:focus-visible {
+  outline: thick double red;
 }
 
 .link.active {
