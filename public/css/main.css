@@ -1,11 +1,12 @@
 :root {
   --rem: 16px;
   --horizontal-padding: 2rem;
-  --header-bg-color: #7cf5ff;
-  --body-bg-color: #4f75ff;
+  --header-bg-color: #f5efff;
+  --body-bg-color: #a594f9;
   --logo-width: 6rem;
   --logo-height-scale-value: 1.5384615385;
   --logo-navbar-gap: 3rem;
+  --focus-outline: solid 0.2rem red;
 }
 
 html {
@@ -19,13 +20,13 @@ body {
 
 *:focus,
 *:focus-visible {
-  outline: thick double red;
+  outline: var(--focus-outline);
 }
 
 .header {
   display: flex;
   align-items: center;
-  padding: 10px var(--horizontal-padding);
+  padding: 1rem var(--horizontal-padding);
   background-color: var(--header-bg-color);
   gap: var(--logo-navbar-gap);
 }
@@ -33,10 +34,12 @@ body {
 .nav {
   display: flex;
   align-items: center;
+  width: 100%;
 }
 
 .logo {
-  width: var(--logo-width);
+  width: 100%;
+  max-width: var(--logo-width);
   background-image: url(/assets/logo.svg);
   background-size: cover;
   height: 0;
@@ -46,13 +49,20 @@ body {
 
 .logo:focus,
 .logo:focus-visible {
-  outline: thick double red;
+  outline: var(--focus-outline);
 }
 
 .links {
+  width: 100%;
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  font-size: 1.4rem;
+  gap: 1rem;
+  position: relative;
+}
+
+.links li {
+  display: contents;
 }
 
 .link {
@@ -63,19 +73,25 @@ body {
 
 .link:focus,
 .link:focus-visible {
-  outline: thick double red;
+  outline: var(--focus-outline);
 }
 
 .link.active {
-  color: red;
+  color: blue;
   background-color: yellow;
+}
+
+.link.login {
+  position: absolute;
+  right: 0;
 }
 
 .title {
   font-size: 2rem;
+  padding-bottom: 1rem;
 }
 
-main {
-  padding: 0
+.main {
+  padding: var(--logo-navbar-gap)
     calc(var(--horizontal-padding) + var(--logo-width) + var(--logo-navbar-gap));
 }

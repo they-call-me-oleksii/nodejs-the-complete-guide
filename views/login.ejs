@@ -1,0 +1,17 @@
+<%- include('shared/head.ejs') %>
+<link rel="stylesheet" href="/css/login.css" />
+
+</head>
+<body>
+  <%- include('shared/navigation.ejs') %>
+  <main class="main">
+    <h1 class="title">Log in</h1>
+    <form class='login-form'>
+    <label for="email">Email</label>
+    <input id="email" name="email" type="text" required />
+    <label for="password">Password</label>
+    <input id="password" name="password" type="text" required />
+    <button type="sumbit">Login</button>
+    </form>
+  </main>
+<%- include('shared/end.ejs') %>

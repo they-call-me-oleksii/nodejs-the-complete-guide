@@ -8,4 +8,10 @@ Router.get("/", (_req, res, _next) => {
   });
 });
 
+Router.get("/login", (_req, res, _next) => {
+  res.render("login", {
+    pageTitle: "Login",
+  });
+});
+
 module.exports = Router;
