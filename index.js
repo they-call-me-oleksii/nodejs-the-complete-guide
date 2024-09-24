@@ -3,6 +3,7 @@ const path = require("path");
 const homeRouter = require("./routes/home");
 const usersRouter = require("./routes/users");
 
+const PORT = process.env.BACKEND_PORT || 3000;
 const app = express();
 app.set("view engine", "ejs");
 app.set("views", "views");
@@ -18,4 +19,6 @@ app.use((_req, res, _next) => {
   res.status(404).render("404", { pageTitle: "404" });
 });
 
-app.listen(3000);
+app.listen(3000, () => {
+  console.log(`Server is running at http://localhost:${PORT}`);
+});

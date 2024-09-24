@@ -1,18 +1,42 @@
 :root {
   --rem: 16px;
   --horizontal-padding: 2rem;
+  --header-bg-color: #7cf5ff;
+  --body-bg-color: #4f75ff;
+  --logo-width: 6rem;
+  --logo-height-scale-value: 1.5384615385;
+  --logo-navbar-gap: 3rem;
+}
+
+html {
+  background-color: var(--header-bg-color);
+}
+
+body {
+  background-color: var(--body-bg-color);
+  min-height: 100vh;
 }
 
 .header {
   display: flex;
   align-items: center;
   padding: 10px var(--horizontal-padding);
-  background-color: aqua;
+  background-color: var(--header-bg-color);
+  gap: var(--logo-navbar-gap);
 }
 
 .nav {
   display: flex;
   align-items: center;
+}
+
+.logo {
+  width: var(--logo-width);
+  background-image: url(/assets/logo.svg);
+  background-size: cover;
+  height: 0;
+  padding: 0; /* reset */
+  padding-bottom: calc(var(--logo-width) / var(--logo-height-scale-value));
 }
 
 .links {
@@ -37,5 +61,6 @@
 }
 
 main {
-  padding: 0 var(--horizontal-padding);
+  padding: 0
+    calc(var(--horizontal-padding) + var(--logo-width) + var(--logo-navbar-gap));
 }

@@ -1,5 +1,15 @@
 const users = [];
 
-class User {
-  constructor() {}
-}
+module.exports = class User {
+  constructor(username) {
+    this.name = username;
+  }
+
+  save() {
+    users.push(this);
+  }
+
+  static fetchAll() {
+    return users;
+  }
+};
