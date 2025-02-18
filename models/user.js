@@ -12,4 +12,7 @@ module.exports = class User {
   static fetchAll() {
     return users;
   }
+  static fetchById(id) {
+    return users;
+  }
 };

@@ -2,6 +2,7 @@ const express = require("express");
 const path = require("path");
 const homeRouter = require("./routes/home");
 const usersRouter = require("./routes/users");
+const { errorController } = require("./controllers/error");
 
 const PORT = process.env.BACKEND_PORT || 3000;
 const app = express();
@@ -15,10 +16,8 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.use(usersRouter);
 app.use(homeRouter);
-app.use((_req, res, _next) => {
-  res.status(404).render("404", { pageTitle: "404" });
-});
+app.use(errorController);
 
-app.listen(3000, () => {
+app.listen(PORT, () => {
   console.log(`Server is running at http://localhost:${PORT}`);
 });
