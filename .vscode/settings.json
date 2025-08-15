@@ -1,3 +1,19 @@
 {
-  "cSpell.words": ["Oleksii", "Yastrebtsev"]
+  "cSpell.words": ["Oleksii", "Ummy", "ummydatabase", "Yastrebtsev"],
+  "sqltools.connections": [
+    {
+      "mysqlOptions": {
+        "authProtocol": "default",
+        "enableSsl": "Disabled"
+      },
+      "previewLimit": 50,
+      "server": "localhost",
+      "port": 3306,
+      "driver": "MySQL",
+      "name": "UMMY-MYSQL-DB",
+      "username": "root",
+      "database": "ummydatabase",
+      "password": "my-secret-pw"
+    }
+  ]
 }

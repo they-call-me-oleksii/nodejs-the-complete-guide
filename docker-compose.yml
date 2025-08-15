@@ -1,0 +1,19 @@
+version: "3.9"
+
+# networks:
+#   backend-network:
+#     driver: bridge
+#   frontend-network:
+#     driver: bridge
+
+services:
+  db:
+    build: # Specify build configuration for your Dockerfile
+      context: ./db/ # Path where Dockerfile is located
+    container_name: ummy-mysql-db-container
+    volumes:
+      - ./db/ummy-data:/var/lib/mysql # Persist MySQL data
+    # networks:
+    #   - backend-network
+    ports:
+      - "3306:3306"
